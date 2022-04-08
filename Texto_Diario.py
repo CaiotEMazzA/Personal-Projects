@@ -4,7 +4,7 @@ from datetime import date
 from os import startfile
 
 def gather_info(url):
-    gross_html = requests.get(url, headers={'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36'})
+    gross_html = requests.get(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36'})
     todays_date_for_div = f'{date.today().year}-{date.today().month:02}-{date.today().day:02}T00:00:00.000Z'
     return gross_html, todays_date_for_div
 
