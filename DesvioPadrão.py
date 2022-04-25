@@ -1,3 +1,5 @@
+# Programa que gera lista de números e se certifica de que o desvio padrão dessa lista é menor ou igual ao especificado
+
 # Função que calcula média (media) de uma dada lista (lis)
 def media(lis):
   """

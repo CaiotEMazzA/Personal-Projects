@@ -1,11 +1,20 @@
+# Programa que gera números pseudo-aleatórios e os apresenta de diferentes formas.
+
 from random import randint
 from os import system
+
+def print_list(lista):
+    for i in lista:
+        if lista.index(i) < len(lista) - 1:
+            print(f'{str(i)}, ', end='')
+        else:
+            print(f'{str(i)}.')
 
 sorteados = list()
 restantes = list()
 
 while len(sorteados) < 54:
-    atual = randint(0, 60)
+    atual = randint(1, 60)
     if atual not in sorteados:
         sorteados.append(atual)
 for i in range(1, 61):
@@ -19,27 +28,14 @@ print('=' * len(welcome))
 
 print()
 print('Aqui estão os números sorteados (na ordem de sorteio): ', end='')
-for i in sorteados:
-    if sorteados.index(i) < len(sorteados) - 1:
-        print(f'{str(i)}, ', end='')
-    else:
-        print(f'{str(i)}.')
+print_list(sorteados)
 
 print()
 print('Aqui estão os números sorteados (na ordem crescente): ', end='')
-for i in sorted(sorteados):
-    if sorted(sorteados).index(i) < len(sorteados) - 1:
-        print(f'{str(i)}, ', end='')
-    else:
-        print(f'{str(i)}.')
+print_list(sorted(sorteados))
 
 print()
 print('Aqui estão os números restantes: ', end='')
-for i in restantes:
-    if restantes.index(i) < len(restantes) - 1:
-        print(f'{str(i)}, ', end='')
-    else:
-        print(f'{str(i)}.')
+print_list(restantes)
 
 system('pause')
-
